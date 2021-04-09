@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@500&family=Tangerine:wght@700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#ffeb3b, #e91e63);
+}
+
+section h2 {
+    font-family: 'Tangerine', cursive;
+    position: relative;
+    text-align: center;
+    font-size: 160px;
+    color: #fff;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    line-height: 100px;
+}
+
+section h2 span {
+    font-size: 30px;
+    font-family: sans-serif;
+}
+
+section h2::before {
+    content: "";
+    position: absolute;
+    top: -44px;
+    left: -80px;
+    width: 200px;
+    height: 200px;
+    background: transparent;
+    border-left: 15px solid #fff;
+    border-radius: 50%;
+    transform: rotate(-30deg);
+    box-shadow: -14px 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mosque {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background: url(./mosque.png);
+    background-repeat: repeat-x;
+    background-size: 1200px;
+    z-index: 1;
+    pointer-events: none;
+    animation: animate 20s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0px;
+    }
+    100% {
+        background-position: 1200px;
+    }
+}
+
+.mosque::before {
+    content: "";
+    opacity: .1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 600px;
+    background: url(./mosque.png);
+    background-repeat: repeat-x;
+    background-size: 1600px;
+    z-index: 1;
+    pointer-events: none;
+    animation: animateReverse 40s linear infinite;
+}
+
+@keyframes animateReverse {
+    0% {
+        background-position: 1600px;
+    }
+    100% {
+        background-position: 0px;
+    }
+}
+
+.particles-js-canvas-el {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.img {
+    position: absolute;
+    width: 150px;
+}
+
+#img2 {
+    top: 20px;
+    left: 0;
+    animation: anim 5s infinite alternate linear;
+}
+
+@keyframes anim {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes anim2 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-20px);
+    }
+}
+
+#img3 {
+    top: -5px;
+    right: 20px;
+    width: 100px;
+    animation: anim2 7s infinite alternate linear;
+}
+
+@media screen and (max-width: 950px) {
+    section h2 {
+        font-size: 120px;
+    }
+    section h2::before {
+        width: 175px;
+        height: 175px;
+    }
+    .mosque {
+        background-size: 1150px;
+        bottom: -32px;
+    }
+    .mosque::before {
+        background-size: 1300px;
+        bottom: -44px;
+    }
+    @keyframes animateReverse {
+        0% {
+            background-position: 1300px;
+        }
+        100% {
+            background-position: 0px;
+        }
+    }
+    @keyframes animate {
+        0% {
+            background-position: 0px;
+        }
+        100% {
+            background-position: 1150px;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    section h2 {
+        font-size: 100px;
+    }
+    section h2::before {
+        width: 120px;
+        height: 120px;
+        top: -25px;
+        left: -45px;
+    }
+    section h2 span {
+        font-size: 26px;
+    }
+    .mosque {
+        background-size: 1000px;
+        bottom: -6px;
+    }
+    .mosque::before {
+        background-size: 1400px;
+        bottom: -40px;
+    }
+    @keyframes animateReverse {
+        0% {
+            background-position: 1400px;
+        }
+        100% {
+            background-position: 0px;
+        }
+    }
+    @keyframes animate {
+        0% {
+            background-position: 0px;
+        }
+        100% {
+            background-position: 1000px;
+        }
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .mosque {
+        bottom: -32px;
+    }
+    .mosque::before {
+        bottom: -15px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    section h2 {
+        font-size: 72px;
+    }
+    section h2::before {
+        width: 120px;
+        height: 120px;
+        top: -130px;
+        left: 45%;
+    }
+    section h2 span {
+        font-size: 21px;
+    }
+    .mosque {
+        background-size: 800px;
+        bottom: -67px;
+    }
+    svg {
+        padding: 5px;
+    }
+    .mosque::before {
+        background-size: 1200px;
+        bottom: -30px;
+    }
+    @keyframes animateReverse {
+        0% {
+            background-position: 1200px;
+        }
+        100% {
+            background-position: 0px;
+        }
+    }
+    @keyframes animate {
+        0% {
+            background-position: 0px;
+        }
+        100% {
+            background-position: 800px;
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    section h2 {
+        font-size: 55px;
+    }
+    svg {
+        padding: 5px;
+    }
+    section h2::before {
+        width: 100px;
+        height: 100px;
+        top: -116px;
+        left: 45%;
+    }
+    section h2 span {
+        font-size: 18px;
+    }
+    .mosque {
+        background-size: 550px;
+        bottom: -108px;
+    }
+    .mosque::before {
+        background-size: 1000px;
+        bottom: 0;
+    }
+    @keyframes animateReverse {
+        0% {
+            background-position: 550px;
+        }
+        100% {
+            background-position: 0px;
+        }
+    }
+    @keyframes animate {
+        0% {
+            background-position: 0px;
+        }
+        100% {
+            background-position: 1000px;
+        }
+    }
+    #img2 {
+        width: 100px;
+    }
+    #img3 {
+        width: 70px;
+        right: 10px;
+    }
+}
+
+audio {
+    position: absolute;
+    bottom: 0;
+    right: -40px;
+    opacity: .2;
+    z-index: 2111111111;
+    outline: none;
+    transform: scale(.5);
+}
+
+.about {
+    z-index: 11111111111;
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    padding: 5px;
+}
+
+svg {
+    width: 50px;
+    padding: 5px 10px;
+}
+
+a {
+    text-decoration: none;
+}
